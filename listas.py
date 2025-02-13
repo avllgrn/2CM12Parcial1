@@ -1,35 +1,31 @@
 from os import system
+from random import randrange
 
-def funcionParaEnteros():
-    lista  = [12, 4, 65, -8, 10]
-    print(lista, type(lista), len(lista))
+def funcionConInput():
+    V = []
+    n = int(input('Cuantos datos? '))
 
-    for i in range(len(lista)):
-        print(i, lista[i], type(lista[i]))
+    for i in range(n):
+        dato = float(input(f'Ingresa [{i}] '))
+        print(dato, type(dato))
+        V.append(dato)
 
+    print(V)
 
-def funcionParaFlotantes():
-    lista  = [1.2, 4.5, 6., -8.7]
-    print(lista, type(lista), len(lista))
+def funcionConRandrange():
+    V = []
+    n = int(input('Cuantos datos? '))
 
-    for i in range(len(lista)):
-        print(i, lista[i], type(lista[i]))
+    for i in range(n):
+        dato = randrange(50, 60)
+        print(dato, type(dato))
+        V.append(dato)
 
-def funcionParaCadenas():
-    lista  = [ 'puerta', 'casa','ventana']
-    print(lista, type(lista), len(lista))
-
-    for i in range(len(lista)):
-        print(i, lista[i], type(lista[i]))
-
-
-
+    print(V)
 
 if __name__ == '__main__':
     system('cls')
-    funcionParaEnteros()
+    funcionConInput()
     print()
-    funcionParaFlotantes()
-    print()
-    funcionParaCadenas()
+    funcionConRandrange()
     print()
