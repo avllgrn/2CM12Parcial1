@@ -4,9 +4,11 @@ if __name__ == '__main__':
     system('cls')
     
     n = int(input('Cuantos? '))
-    s = 0
+    p = 1
+
+    for i in range(1,n+1):
+        p = p*i
+        print(f'i={i}\tp={p}')
     
-    for i in range(n):
-        s = s+i
-        print(f'i={i}\ts={s}')
+    print(f'p = {p}')
         
