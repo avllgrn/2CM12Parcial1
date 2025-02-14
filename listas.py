@@ -1,14 +1,14 @@
 from os import system
+from random import randrange
 
 if __name__ == '__main__':
     system('cls')
     
     n = int(input('Cuantos? '))
-    p = 1
-
-    for i in range(1,n+1):
-        p = p*i
-        print(f'i={i}\tp={p}')
-    
-    print(f'p = {p}')
+    s = 0
+    for i in range(n+1):
+        dato = randrange(-100, 101)
+        s = s+dato
+        print(f'i={dato}\ts={s}')
         
+    print(f's={s}')
