@@ -4,35 +4,26 @@ from random import randrange
 def generaRand(tam, ini, fin):
     l = []
 
-    i = 0
-    while i < tam:
+    for i in range(tam):
         l.append(randrange(ini, fin))
-        i += 1
-
+        
     return l
 
 def muestraLista(l):
     tam = len(l)
-    
-    i = 0
-    while i < tam:
+    for i in range(tam):
         print(f'[{i}] = {l[i]}')
-        i += 1
 
 def concatenaListas(l1, l2):
     l3 = []
-    
-    tam = len(l1)    
-    i = 0
-    while i < tam:
-        l3.append(l1[i])
-        i += 1
 
-    tam = len(l2)
-    i = 0
-    while i < tam:
+    tam1 = len(l1)
+    for i in range(tam1):
+        l3.append(l1[i])
+
+    tam2 = len(l2)
+    for i in range(tam2):
         l3.append(l2[i])
-        i += 1
 
     return l3
 
