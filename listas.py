@@ -6,7 +6,7 @@ def generaRand(tam, ini, fin):
 
     for i in range(tam):
         l.append(randrange(ini, fin))
-        
+
     return l
 
 def muestraLista(l):
@@ -17,13 +17,11 @@ def muestraLista(l):
 def concatenaListas(l1, l2):
     l3 = []
 
-    tam1 = len(l1)
-    for i in range(tam1):
-        l3.append(l1[i])
+    for dato in l1:
+        l3.append(dato)
 
-    tam2 = len(l2)
-    for i in range(tam2):
-        l3.append(l2[i])
+    for dato in l2:
+        l3.append(dato)
 
     return l3
 
