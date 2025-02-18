@@ -1,56 +1,55 @@
 from os import system
 from random import randrange
 
+def generaRand(tam, ini, fin):
+    l = []
+
+    i = 0
+    while i < tam:
+        l.append(randrange(ini, fin))
+        i += 1
+
+    return l
+
+def muestraLista(l):
+    tam = len(l)
+    
+    i = 0
+    while i < tam:
+        print(f'[{i}] = {l[i]}')
+        i += 1
+
+def concatenaListas(l1, l2):
+    l3 = []
+    
+    tam = len(l1)    
+    i = 0
+    while i < tam:
+        l3.append(l1[i])
+        i += 1
+
+    tam = len(l2)
+    i = 0
+    while i < tam:
+        l3.append(l2[i])
+        i += 1
+
+    return l3
+
 if __name__ == '__main__':
     system('cls')
+    n = int(input('Dame n '))
+    m = int(input('Dame m '))
+
+    A = generaRand(n,-100,101)
+    B = generaRand(m,-100,101)
+
+    C = concatenaListas(A, B)
+
+    print('\nA')
+    muestraLista(A)
+    print('\nB')
+    muestraLista(B)
+    print('\nC')
+    muestraLista(C)
     
-    n = int(input('Cuantos? '))
-    V = []
-    for i in range(n):
-        dato = randrange(-100, 101)
-        V.append(dato)
-        print(f'V[{i}] = {V[i]}')
-    print('\n')
-
-    s = 0
-    for i in range(n):
-        s = s+V[i]
-        #print(f'V[{i}] = {V[i]}\ts={s}')
-    #print('\n')
-        
-    print(f's={s}')
-    if n>0:
-        promedio = s/n
-        print(f'promedio = {promedio}')
-    
-    menor = V[0]
-    posMenor = 0
-    for i in range(n):
-        #print(f'menor = {menor}')
-        if V[i] < menor:
-            menor = V[i]
-            posMenor = i
-    #print('\n')
-    print(f'menor = {menor} = V[{posMenor}]')
-
-    mayor = V[0]
-    posMayor = 0
-    for i in range(n):
-        #print(f'mayor = {mayor}')
-        if V[i] > mayor:
-            mayor = V[i]
-            posMayor = i
-    #print('\n')
-    print(f'mayor = {mayor} = V[{posMayor}]')
-
-    menoresQuePromedio = 0
-    for i in range(n):
-        if V[i] < promedio:
-            menoresQuePromedio += 1
-    print(f'Hay {menoresQuePromedio} datos menores al promedio')
-
-    mayoresQuePromedio = 0
-    for i in range(n):
-        if V[i] > promedio:
-            mayoresQuePromedio += 1
-    print(f'Hay {mayoresQuePromedio} datos mayores al promedio')
