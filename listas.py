@@ -25,6 +25,17 @@ def concatenaListas(l1, l2):
 
     return l3
 
+def acumulaListas(l1, l2):
+    s = 0
+    for dato in l1:
+        #print(s, dato)
+        s += dato
+    
+    for dato in l2:
+        #print(s, dato)
+        s += dato
+
+    return s
 if __name__ == '__main__':
     system('cls')
     n = int(input('Dame n '))
@@ -33,12 +44,10 @@ if __name__ == '__main__':
     A = generaRand(n,-100,101)
     B = generaRand(m,-100,101)
 
-    C = concatenaListas(A, B)
-
     print('\nA')
     muestraLista(A)
     print('\nB')
     muestraLista(B)
-    print('\nC')
-    muestraLista(C)
     
+    acumulacion = acumulaListas(A, B)    
+    print(f'Suma  = {acumulacion}')
