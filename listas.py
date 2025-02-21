@@ -37,10 +37,11 @@ def acumulaListas(l1, l2):
 
     return s
 
+
 def sumaVectores(V1, V2):
     V3 = []
 
-    if len(A)==len(B):
+    if len(P1)==len(P2):
         for i in range(n):
             V3.append(V1[i]+V2[i])
 
@@ -49,29 +50,41 @@ def sumaVectores(V1, V2):
 def restaVectores(V1, V2):
     V3 = []
 
-    if len(A)==len(B):
+    if len(P1)==len(P2):
         for i in range(n):
             V3.append(V1[i]-V2[i])
 
     return V3
 
+
+def promediaCalificaciones(n,P1, P2, P3):
+    Prom = []
+
+    for i in range(n):
+        Prom.append((P1[i]+P2[i]+P3[i])/3)
+
+    return Prom
+
+
+def muestraCalificaciones(n, P1, P2, P3, Prom):
+
+    print('Alumno',end='\t')
+    for j in range(3):
+        print(f'P{j+1}',end='\t')
+    print('Promedio\n')
+    
+    for i in range(n):
+        print(f'{i+1}\t{P1[i]}\t{P2[i]}\t{P3[i]}\t{Prom[i]}')
+
 if __name__ == '__main__':
     system('cls')
     n = int(input('Dame n '))
-    m = int(input('Dame m '))
 
-    A = generaRand(n,-100,11)
-    B = generaRand(m,-100,11)
+    P1 = generaRand(n,0,11)
+    P2 = generaRand(n,0,11)
+    P3 = generaRand(n,0,11)
 
-    print('\nA')
-    muestraLista(A)
-    print('\nB')
-    muestraLista(B)
+    Prom = promediaCalificaciones(n,P1,P2,P3)
+
+    muestraCalificaciones(n, P1, P2, P3, Prom)
     
-    C=sumaVectores(A,B)
-    D=restaVectores(A,B)
-
-    print('\nC')
-    muestraLista(C)
-    print('\nD')
-    muestraLista(D)
