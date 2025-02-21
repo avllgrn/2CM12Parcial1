@@ -27,7 +27,9 @@ if __name__ == '__main__':
     muestraLista(L)
     print()
 
-    del L   # Cesa de existir L
+    x = int(input('Cuál dato deseas borrar? '))
+    if x in L:
+        L.remove(x)
     print(f'L={L}, {type(L)}, tam {len(L)}')
     muestraLista(L)
     print()
