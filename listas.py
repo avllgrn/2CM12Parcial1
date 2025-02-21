@@ -23,24 +23,11 @@ if __name__ == '__main__':
     n = int(input('Dame n '))
 
     L = generaRand(n,0,11)
-    print(f'L, tam {len(L)}')
+    print(f'L={L}, {type(L)}, tam {len(L)}')
     muestraLista(L)
     print()
 
-    print(f'Sale {L.pop()}')
-    print(f'L, tam {len(L)}')
+    L.clear()
+    print(f'L={L}, {type(L)}, tam {len(L)}')
     muestraLista(L)
     print()
-
-    print(f'Sale {L.pop()}')
-    print(f'L, tam {len(L)}')
-    muestraLista(L)
-    print()
-
-    print(f'Sale {L.pop()}')
-    print(f'L, tam {len(L)}')
-    muestraLista(L)
-    print()
-
-
-    
