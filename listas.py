@@ -1,31 +1,20 @@
 from os import system
 from random import randrange
 
-def generaListaRand(tam, ini, fin):
-    l = []
-
-    for i in range(tam):
-        l.append(randrange(ini, fin))
-
-    return l
-
-def muestraContenedor(l):
-    tam = len(l)
-    for i in range(tam):
-        print(f'[{i}] = {l[i]}')
+def funcion(*argumentos):
+    print(f'argumentos = {argumentos} tamaño = {len(argumentos)} type = {type(argumentos)}')
+    print('Contenido de argumentos:')
+    for dato in argumentos:
+        print(f'{dato} type = {type(dato)}')
+    print()
 
 if __name__ == '__main__':
     system('cls')
 
-    n = int(input('¿Cuántos datos necesitas? '))
-
-    lista = generaListaRand(n, 0, 101)  #Se genera lista con valores aleatorios
-    tupla = tuple(lista)                #Se genera tupla con valores de lista
-
-    print(f'lista{lista}, {type(lista)}, tam {len(lista)}')
-    muestraContenedor(lista)
-    print()
-
-    print(f'tupla{tupla}, {type(tupla)}, tam {len(tupla)}')
-    muestraContenedor(tupla)
-    print()
+    funcion()
+    funcion(1)
+    funcion(2.3)
+    funcion('cuatro')
+    funcion(5, 6, 7, 8)
+    funcion(9.8, 7.6, 5.4, 3.2, 1.0)
+    funcion('uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis' )
