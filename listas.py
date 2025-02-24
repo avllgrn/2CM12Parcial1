@@ -1,4 +1,13 @@
 from os import system
+from random import randrange
+
+def generaListaRand(tam, ini, fin):
+    l = []
+
+    for i in range(tam):
+        l.append(randrange(ini, fin))
+
+    return l
 
 def muestraContenedor(l):
     tam = len(l)
@@ -8,8 +17,10 @@ def muestraContenedor(l):
 if __name__ == '__main__':
     system('cls')
 
-    lista = [1, 3, 5, 7, 9]
-    tupla = (2, 4, 6, 8, 10)
+    n = int(input('¿Cuántos datos necesitas? '))
+
+    lista = generaListaRand(n, 0, 101)  #Se genera lista con valores aleatorios
+    tupla = tuple(lista)                #Se genera tupla con valores de lista
 
     print(f'lista{lista}, {type(lista)}, tam {len(lista)}')
     muestraContenedor(lista)
