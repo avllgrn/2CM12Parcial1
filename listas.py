@@ -1,37 +1,20 @@
 from os import system
-from random import randrange
 
-def generaRand(tam, ini, fin):
-    l = []
-
-    for i in range(tam):
-        l.append(randrange(ini, fin))
-
-    return l
-
-def muestraLista(l):
+def muestraContenedor(l):
     tam = len(l)
     for i in range(tam):
         print(f'[{i}] = {l[i]}')
 
-
-
-
-
 if __name__ == '__main__':
     system('cls')
-    n = int(input('Dame n '))
 
-    L = generaRand(n,0,11)
-    print(f'L, {type(L)}, tam {len(L)}')
-    muestraLista(L)
+    lista = [1, 3, 5, 7, 9]
+    tupla = (2, 4, 6, 8, 10)
+
+    print(f'lista{lista}, {type(lista)}, tam {len(lista)}')
+    muestraContenedor(lista)
     print()
 
-    x = int(input('Cuál dato deseas borrar? '))
-
-    while x in L:
-        L.remove(x)
-
-    print(f'L, {type(L)}, tam {len(L)}')
-    muestraLista(L)
+    print(f'tupla{tupla}, {type(tupla)}, tam {len(tupla)}')
+    muestraContenedor(tupla)
     print()
