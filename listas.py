@@ -1,24 +1,38 @@
 from os import system
+from random import randrange
 
 if __name__ == '__main__':
     system('cls')
 
-    conjunto = set()    #Conjunto vacio ***Cuidado*** NO es {}
-    print(f'conjunto={conjunto} type={type(conjunto)}', end=' ')
-    print(f'len={len(conjunto)}',end='\n\n')
+    A = set()    #Conjunto vacio ***Cuidado*** NO es {}
+    print(f'conjunto={A} type={type(A)}', end=' ')
+    print(f'len={len(A)}',end='\n\n')
 
-    conjunto = {1, 3, 5, 7, 9}  # Conjunto inicializado
-    print(f'conjunto={conjunto} type={type(conjunto)}', end=' ')
-    print(f'len={len(conjunto)}',end='\n\n')
+    while len(A)<10:
+        x = randrange(101)
+        print(f'Se intenta agregar {x} en A')
+        A.add(x)
+        print(f'conjunto={A} type={type(A)}', end=' ')
+        print(f'len={len(A)}',end='\n\n')
+        
+    B = set()    #Conjunto vacio ***Cuidado*** NO es {}
+    print(f'conjunto={B} type={type(B)}', end=' ')
+    print(f'len={len(B)}',end='\n\n')
 
-    conjunto.add(11)    #Se agrega un elemento a un conjunto
-    print(f'conjunto={conjunto} type={type(conjunto)}', end=' ')
-    print(f'len={len(conjunto)}',end='\n\n')
+    while len(B)<10:
+        x = randrange(101)
+        print(f'Se intenta agregar {x} en B')
+        B.add(x)
+        print(f'conjunto={B} type={type(B)}', end=' ')
+        print(f'len={len(B)}',end='\n\n')
+        
 
-    conjunto.add(3) #No pueden agregarse elementos ya existentes
-    print(f'conjunto={conjunto} type={type(conjunto)}', end=' ')
-    print(f'len={len(conjunto)}',end='\n\n')
-   
-    conjunto.add(7)
-    print(f'conjunto={conjunto} type={type(conjunto)}', end=' ')
-    print(f'len={len(conjunto)}',end='\n\n')    
+    print(f'A{A}')
+    for dato in A:
+        print(dato)
+    print()
+    
+    print(f'B{B}')
+    for dato in B:
+        print(dato)
+    print()
