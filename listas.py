@@ -1,29 +1,50 @@
 from os import system
-from math import pow, sqrt
-
-def raicesFormulaGeneral(a, b, c):
-    x1 = None
-    x2 = None
-    
-    disc = pow(b,2)-4*a*c
-    if disc < 0:
-        print('Error! Raíces imaginarias...')
-    elif a == 0:
-        print('Error! Raíces indeterminadas...')
-    else:
-        x1 = (-b+sqrt(disc))/(2*a)
-        x2 = (-b-sqrt(disc))/(2*a)
-    
-    return x1,x2
 
 if __name__ == '__main__':
     system('cls')
 
-    x1,x2 = raicesFormulaGeneral(1,1,1)
-    print(f'x1={x1}\tx2={x2}\n')
+    d = {}
+    print(d, type(d), len(d))   # muestra el diccionario
+    print(d.items(), type(d.items()), len(d.items()))   # muestra los elementos del diccionario (lista de tuplas)
+    for i in d.items():
+        print(i, type(i))   # muestra cada item/tupla/pareja
+    print()
 
-    x1,x2 = raicesFormulaGeneral(0,1,1)
-    print(f'x1={x1}\tx2={x2}\n')
+    for k,v in d.items():
+        print(k, type(k), ', ', v, type(v))   # muestra cada clave y valor de cada item/tupla/pareja
+    print()
+
+
+    d1 = {'clave1':1}
+    print(d1, type(d1), len(d1))    # muestra el diccionario
+    print(d1.items(), type(d1.items()), len(d1.items()))    # muestra los elementos del diccionario (lista de tuplas)
+    for i in d1.items():
+        print(i, type(i))   # muestra cada item/tupla/pareja
+    print()
+
+    for k,v in d1.items():
+        print(k, type(k), ', ', v, type(v))# muestra cada clave y valor de cada item/tupla/pareja
+    print()
+
+    d2 = {'clave1':1, 'clave2':2}
+    print(d2, type(d2), len(d2))    # muestra el diccionario
+    print(d2.items(), type(d2.items()), len(d2.items()))    # muestra los elementos del diccionario (lista de tuplas)
+    for i in d2.items():
+        print(i, type(i))   # muestra cada item/tupla/pareja
+    print()
+
+    for k,v in d2.items():
+        print(k, type(k), ', ', v, type(v))# muestra cada clave y valor de cada item/tupla/pareja
+    print()
+
+    d3 = {'clave1':1, 'clave2':2, 'clave3':3}
+    print(d3, type(d3), len(d3))    # muestra el diccionario
+    print(d3.items(), type(d3.items()), len(d3.items()))    # muestra los elementos del diccionario (lista de tuplas)
+    for i in d3.items():
+        print(i, type(i))   # muestra cada item/tupla/pareja
+    print()
+
+    for k,v in d3.items():
+        print(k, type(k), ', ', v, type(v))# muestra cada clave y valor de cada item/tupla/pareja
+    print()
     
-    x1,x2 = raicesFormulaGeneral(-1,1,1)
-    print(f'x1={x1}\tx2={x2}\n')
