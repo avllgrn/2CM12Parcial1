@@ -6,13 +6,13 @@ if __name__ == '__main__':
     d = {}
     print(d, type(d), len(d), '\n') # muestra el diccionario
     
-    d.update({'clave1':1})
+    d.update({'clave1':1.1})
     print(d, type(d), len(d), '\n') # muestra el diccionario
     
-    d.update({'clave2':2})
+    d.update({'clave2':2.2})
     print(d, type(d), len(d), '\n') # muestra el diccionario
 
-    d.update({'clave3':3})
+    d.update({'clave3':3.3})
     print(d, type(d), len(d), '\n') # muestra el diccionario
     
     print(d.items())    # muestra los elementos del diccionario (lista de tuplas)
