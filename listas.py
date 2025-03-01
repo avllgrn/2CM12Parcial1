@@ -1,26 +1,30 @@
 from os import system
-from random import randrange
+from math import pow, sqrt
+
+def raicesFormulaGeneral(a, b, c):
+    x1 = None
+    x2 = None
+    
+    disc = pow(b,2)-4*a*c
+    if disc < 0:
+        print('Error! Raíces imaginarias...')
+    elif a == 0:
+        print('Error! Raíces indeterminadas...')
+    else:
+        x1 = (-b+sqrt(disc))/(2*a)
+        x2 = (-b-sqrt(disc))/(2*a)
+    
+    return x1,x2
 
 if __name__ == '__main__':
     system('cls')
 
-    Conjunto = set()
+    x = raicesFormulaGeneral(1,1,1)
+    print(f'x={x} type={type(x)}, len={len(x)}\n')
 
-    while len(Conjunto)<10:
-        Conjunto.add(randrange(101))
-    
-    print(Conjunto, type(Conjunto), len(Conjunto))
+    x = raicesFormulaGeneral(0,1,1)
+    print(f'x={x} type={type(x)}, len={len(x)}\n')
 
-    x = int(input('Cuál quieres eliminar? '))
-    if x in Conjunto:
-        Conjunto.remove(x)
-    print(Conjunto, type(Conjunto), len(Conjunto),'\n')
+    x = raicesFormulaGeneral(-1,1,1)
+    print(f'x={x} type={type(x)}, len={len(x)}\n')
 
-    x = int(input('Cuál quieres eliminar? '))
-    Conjunto.discard(x)
-    print(Conjunto, type(Conjunto), len(Conjunto),'\n')
-
-    x = Conjunto.pop()
-    print(f'Sale {x}', end=' ')
-    Conjunto.discard(x)
-    print(Conjunto, type(Conjunto), len(Conjunto),'\n')
