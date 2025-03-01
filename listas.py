@@ -19,21 +19,11 @@ def raicesFormulaGeneral(a, b, c):
 if __name__ == '__main__':
     system('cls')
 
-    x = raicesFormulaGeneral(1,1,1)
-    print(f'x={x} type={type(x)}, len={len(x)}')
-    x1 = x[0]
-    x2 = x[1]
+    x1,x2 = raicesFormulaGeneral(1,1,1)
     print(f'x1={x1}\tx2={x2}\n')
 
-    x = raicesFormulaGeneral(0,1,1)
-    print(f'x={x} type={type(x)}, len={len(x)}')
-    x1 = x[0]
-    x2 = x[1]
+    x1,x2 = raicesFormulaGeneral(0,1,1)
     print(f'x1={x1}\tx2={x2}\n')
-
-    x = raicesFormulaGeneral(-1,1,1)
-    print(f'x={x} type={type(x)}, len={len(x)}')
-    x1 = x[0]
-    x2 = x[1]
+    
+    x1,x2 = raicesFormulaGeneral(-1,1,1)
     print(f'x1={x1}\tx2={x2}\n')
-
