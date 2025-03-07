@@ -1,20 +1,21 @@
 from os import system
 
 class Nodo:
-    def __init__(self, dato=None, inferior=None):
+    def __init__(self, dato=None, siguiente=None):
         self.dato = dato
-        self.inferior = inferior
+        self.siguiente = siguiente
 
     def __str__(self):
         cadena = '| '
         cadena += str(self.dato) + ' |'
-        if self.inferior != None:
+        if self.siguiente != None:
             cadena += ' -> '
         return cadena
 
-class Pila:
+class Cola:
     def __init__(self):
-        self.tope = None
+        self.primero = None
+        self.ultimo = None
 
     def __del__(self):
         self.liberaMemoria()
@@ -24,36 +25,45 @@ class Pila:
             print(self.pop())
 
     def estaVacia(self):
-        return self.tope == None
+        return self.primero == None and self.ultimo == None
 
     def push(self, dato):
-        self.tope = Nodo(dato, self.tope)
+        if self.estaVacia():
+            self.ultimo = Nodo(dato, None)
+            self.primero = self.ultimo
+        else:
+            self.ultimo.siguiente = Nodo(dato, None)
+            self.ultimo = self.ultimo.siguiente
 
     def pop(self):
         d = None
         if not self.estaVacia():
-            d = self.tope.dato
-            aux = self.tope
-            self.tope = self.tope.inferior
-            del aux
+            d = self.primero.dato 
+            if self.primero != self.ultimo:
+                aux = self.primero
+                self.primero = self.primero.siguiente
+                del aux
+            else:
+                del self.primero
+                self.primero = None
+                self.ultimo = None
         return d
 
 if __name__ == '__main__':
     system('cls')
 
-    P = Pila()
+    C = Cola()
 
-    P.push(5)
-    P.push(3)
-    P.push(7)
-    P.push(-4)
+    C.push(5.1)
+    C.push(3.1)
+    C.push(7.1)
+    C.push(-4.1)
 
-    print(P.pop())
-    print(P.pop())
+    print(C.pop(), ' -> ', end='')
+    print(C.pop(), ' -> ', end='')
     
-    P.push(9)
+    C.push(9.1)
 
-    print(P.pop())
-    print(P.pop())
-    print(P.pop())
-    print(P.pop())
+    print(C.pop(), ' -> ', end='')
+    print(C.pop(), ' -> ', end='')
+    print(C.pop(), ' -> ', end='')
