@@ -1,5 +1,7 @@
-import Pilas
+import Colas
 from os import system
+from random import randrange
+
 
 def menu():
     print('1. Push')
@@ -8,19 +10,19 @@ def menu():
     print('4. Salir')
     return input('Cuál es tu opción? ')    
 
-def casos(opcion, P):
+def casos(opcion, C):
     match opcion:
         case '1':
             x = input('Teclea dato a insertar ')
-            P.push(x)
+            C.push(x)
         case '2':
-            if not P.estaVacia():
-                print(f'Sale {P.pop()}')
+            if not C.estaVacia():
+                print(f'Sale {C.pop()}')
             else:
-                print('La pila está vacía...')
+                print('La cola está vacía...')
             system('pause')
         case '3':
-            P.liberaMemoria()
+            C.liberaMemoria()
             system('pause')
         case '4':
             print('Adiós!')
@@ -30,10 +32,10 @@ def casos(opcion, P):
 
 if __name__ == '__main__':
     system('cls')
-    P = Pilas.Pila()
+    C = Colas.Cola()
     
     opcion = None
     while opcion!='4':
         system('cls')
         opcion = menu()
-        casos(opcion, P)
+        casos(opcion, C)
