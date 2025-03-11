@@ -2,7 +2,7 @@ from os import system
 import Pilas
 import Colas
 
-def esPalindromo(cadena):
+def esPalindromo(cadena):   #INCOMPLETO
     P = Pilas.Pila()
     C = Colas.Cola()
 
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     cadena = input('Ingresa cadena ')
     
     if esPalindromo(cadena):
-        print(f'{cadena}\n\nES palíndromo =)')
+        print(f'{cadena} ES palíndromo =)')
     else:
         system('cls')
-        print(f'{cadena}\n\nNO es palíndromo =(')
+        print(f'{cadena} NO es palíndromo =(')
