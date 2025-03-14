@@ -4,12 +4,14 @@ import Pilas
 def verificaParentesis(expresion):
     P = Pilas.Pila()
 
+    parejas = { '(':')' }
+
     for parentesis in expresion:
-        if parentesis is '(':
-            P.push(')')
-        elif parentesis is ')' and P.estaVacia():
+        if parentesis in parejas:
+            P.push( parejas.get(parentesis) )
+        elif parentesis in parejas.values() and P.estaVacia():
             return False
-        elif parentesis is ')' and not P.estaVacia():
+        elif parentesis in parejas.values() and not P.estaVacia():
             P.pop()
 
     if P.estaVacia():
