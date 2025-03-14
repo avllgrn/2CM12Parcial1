@@ -1,29 +1,29 @@
 from os import system
 import Pilas
-import Colas
 
-def esPalindromo(cadena):
+def verificaParentesis(expresion):
     P = Pilas.Pila()
-    C = Colas.Cola()
 
-    for caracter in cadena:
-        if caracter.isalnum():
-            P.push(caracter.lower())
-            C.push(caracter.lower())
-
-    while not C.estaVacia() and not P.estaVacia():
-        if P.pop() != C.pop():
-            print()
+    for parentesis in expresion:
+        if parentesis is '(':
+            P.push(')')
+        elif parentesis is ')' and P.estaVacia():
             return False
-    return True
+        elif parentesis is ')' and not P.estaVacia():
+            P.pop()
+
+    if P.estaVacia():
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
     system('cls')
     
-    cadena = input('Ingresa cadena ')
+    expresion = input('Ingresa expresión ')
     
-    if esPalindromo(cadena):
-        print(f'{cadena}\n\nES palíndromo =)')
+    if verificaParentesis(expresion):
+        print(f'{expresion} ESTÁ balanceada =)')
     else:
         system('cls')
-        print(f'{cadena}\n\nNO es palíndromo =(')
+        print(f'{expresion} NO está balanceada =(')
