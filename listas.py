@@ -1,30 +1,20 @@
 from os import system
 import Pilas
 
-def verificaParentesis(expresion):
+def verificaAgrupador(expresion):
     P = Pilas.Pila()
 
-    for parentesis in expresion:
-        if parentesis == '(':
-            P.push( ')' )
+    parejas = { '(':')', '[':']', '{':'}', '<':'>' }
 
-        elif parentesis == '[':
-            P.push( ']' )
+    for agrupador in expresion:
+        if agrupador in parejas:
+            P.push( parejas.get(agrupador) )
 
-        elif parentesis == '{':
-            P.push( '}' )
-
-        elif parentesis == '<':
-            P.push( '>' )
-
-        elif (parentesis == ')' or parentesis == ']' or 
-              parentesis == '}' or parentesis == '>') and P.estaVacia():
+        elif agrupador in parejas.values() and P.estaVacia():
             return False
         
-        elif (parentesis == ')' or parentesis == ']' or 
-              parentesis == '}' or parentesis == '>') and not P.estaVacia():
-            if P.pop()!=parentesis:
-                return False
+        elif agrupador in parejas.values() and not P.estaVacia() and P.pop()!=agrupador:
+            return False
 
     if P.estaVacia():
         return True
@@ -36,7 +26,7 @@ if __name__ == '__main__':
     
     expresion = input('Ingresa expresión ')
     
-    if verificaParentesis(expresion):
+    if verificaAgrupador(expresion):
         print(f'{expresion} ESTÁ balanceada =)')
     else:
         system('cls')
