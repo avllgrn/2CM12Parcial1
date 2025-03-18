@@ -10,7 +10,8 @@ if __name__ == '__main__':
 
     lista1 = []
     lista2 = []
-    diccionario = {}
+    conjunto1 = set()
+    conjunto2 = set()
     
     for i in range(n):
         x = randrange(100)
@@ -23,6 +24,13 @@ if __name__ == '__main__':
     print(f'Lista2 = {lista2}')
     
     for i in range(len(lista1)):
-        diccionario.update({lista1[i] : lista2[i]})
+        conjunto1.add(lista1[i])
+        conjunto2.add(lista2[i])
         
-    print(f'diccionario = {diccionario}')
+    conjunto3 = conjunto1.union(conjunto2)
+    conjunto4 = conjunto1.intersection(conjunto2)
+
+    print(f'conjunto1 = {conjunto1}')
+    print(f'conjunto2 = {conjunto2}')
+    print(f'conjunto3 = {conjunto3}')
+    print(f'conjunto4 = {conjunto4}')
