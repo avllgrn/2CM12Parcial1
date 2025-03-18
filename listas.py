@@ -10,9 +10,8 @@ if __name__ == '__main__':
 
     conjunto1 = set()
     conjunto2 = set()
-    lista1 = []
-    lista2 = []
-    diccionario = {}
+    P = Pilas.Pila()
+    C = Colas.Cola()
         
     for i in range(n):
         x = randrange(100)
@@ -24,14 +23,16 @@ if __name__ == '__main__':
     print(f'conjunto1 = {conjunto1}')
     print(f'conjunto2 = {conjunto2}')
 
-    if len(conjunto1) == len(conjunto2):
-        for i in conjunto1:
-            lista1.append(i)
+    for i in conjunto1:
+        P.push(i)
 
-        for i in conjunto2:
-            lista2.append(i)
-            
-        for i in range(len(lista1)):
-            diccionario.update( { lista1[i] : lista2[i]} )
-
-    print(f'diccionario = {diccionario}')
+    for i in conjunto2:
+        C.push(i)
+        
+    print('Pila')
+    P.liberaMemoria()
+    print()
+    
+    print('Cola')
+    C.liberaMemoria()
+    print()
