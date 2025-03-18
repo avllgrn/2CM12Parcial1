@@ -10,8 +10,7 @@ if __name__ == '__main__':
 
     P = Pilas.Pila()
     C = Colas.Cola()
-    lista1 = []
-    lista2 = []
+    diccionario = {}
         
     for i in range(n):
         x = randrange(100)
@@ -20,14 +19,10 @@ if __name__ == '__main__':
         P.push(x)
         C.push(y)
 
-    while not P.estaVacia():
-        lista1.append(P.pop())
+    while not P.estaVacia() and not C.estaVacia():
+        diccionario.update( { P.pop() : C.pop()} )
 
-    while not C.estaVacia():
-        lista2.append(C.pop())
-        
-    print(f'lista1 = {lista1}')
-    print(f'lista2 = {lista2}')
+    print(f'diccionario = {diccionario}')
 
     print('Pila')
     P.liberaMemoria()
