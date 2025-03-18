@@ -10,7 +10,8 @@ if __name__ == '__main__':
 
     P = Pilas.Pila()
     C = Colas.Cola()
-    diccionario = {}
+    conjunto1 = set()
+    conjunto2 = set()
         
     for i in range(n):
         x = randrange(100)
@@ -20,9 +21,11 @@ if __name__ == '__main__':
         C.push(y)
 
     while not P.estaVacia() and not C.estaVacia():
-        diccionario.update( { P.pop() : C.pop()} )
+        conjunto1.add( P.pop() )
+        conjunto2.add( C.pop() )
 
-    print(f'diccionario = {diccionario}')
+    print(f'conjunto1 = {conjunto1}')
+    print(f'conjunto2 = {conjunto2}')
 
     print('Pila')
     P.liberaMemoria()
