@@ -8,20 +8,21 @@ if __name__ == '__main__':
 
     n = int(input('Cuántos? '))
 
-    Original = Pilas.Pila()
-    Cola =Colas.Cola()
-
+    lista1 = []
+    lista2 = []
+    diccionario = {}
+    
     for i in range(n):
-        x = randrange(101)
-        print(f'Original.push({x})')
-        Original.push(x)
-    print()
-
-    while not Original.estaVacia():
-        Cola.push( Original.pop() )
-
-    while not Cola.estaVacia():
-        Original.push( Cola.pop() )
-
-    print('\nOriginal')
-    Original.liberaMemoria()
+        x = randrange(100)
+        y = randrange(100)
+        print(f'Se agregan {x} y {y}')
+        lista1.append(x)
+        lista2.append(y)
+        
+    print(f'Lista1 = {lista1}')
+    print(f'Lista2 = {lista2}')
+    
+    for i in range(len(lista1)):
+        diccionario.update({lista1[i] : lista2[i]})
+        
+    print(f'diccionario = {diccionario}')
