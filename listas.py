@@ -9,8 +9,8 @@ if __name__ == '__main__':
     n = int(input('Cuántos? '))
 
     diccionario = {}
-    lista1 = []
-    lista2 = []
+    conjunto1 = set()
+    conjunto2 = set()
     
     for i in range(n):
         x = randrange(100)
@@ -21,8 +21,13 @@ if __name__ == '__main__':
     print(f'diccionario = {diccionario}')
     
     for i in diccionario:
-        lista1.append(i)
-        lista2.append(diccionario.get(i))
-        
-    print(f'Lista1 = {lista1}')
-    print(f'Lista2 = {lista2}')
+        conjunto1.add(i)
+        conjunto2.add(diccionario.get(i))
+
+    conjunto3 = conjunto1.union(conjunto2)
+    conjunto4 = conjunto1.intersection(conjunto2)
+
+    print(f'conjunto1 = {conjunto1}')
+    print(f'conjunto2 = {conjunto2}')
+    print(f'conjunto3 = {conjunto3}')
+    print(f'conjunto4 = {conjunto4}')
