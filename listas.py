@@ -8,31 +8,28 @@ if __name__ == '__main__':
 
     n = int(input('Cuántos? '))
 
-    conjunto1 = set()
-    conjunto2 = set()
     P = Pilas.Pila()
     C = Colas.Cola()
+    lista1 = []
+    lista2 = []
         
     for i in range(n):
         x = randrange(100)
         y = randrange(100)
         print(f'Se agregan {x} y {y}')
-        conjunto1.add(x)
-        conjunto2.add(y)
+        P.push(x)
+        C.push(y)
 
-    print(f'conjunto1 = {conjunto1}')
-    print(f'conjunto2 = {conjunto2}')
+    while not P.estaVacia():
+        lista1.append(P.pop())
 
-    for i in conjunto1:
-        P.push(i)
-
-    for i in conjunto2:
-        C.push(i)
+    while not C.estaVacia():
+        lista2.append(C.pop())
         
+    print(f'lista1 = {lista1}')
+    print(f'lista2 = {lista2}')
+
     print('Pila')
     P.liberaMemoria()
-    print()
-    
     print('Cola')
     C.liberaMemoria()
-    print()
